@@ -9,9 +9,13 @@
         <label>E-mail</label>
         <input type="email" name="email" class="form-control">
     </div>
+        <div class="mb-3">
+        <label>Contato</label>
+        <input type="tel" name="contato" class="form-control">
+    </div>
     <div class="mb-3">
         <label>Senha</label>
-        <input type="password" name="senha" class="form-control">    
+        <input type="password" name="senha" class="form-control" required>    
     </div>
     <div class="mb-3">
         <label>Data de Nascimento</label>

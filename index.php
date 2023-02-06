@@ -26,6 +26,11 @@
         <li class="nav-item">
           <a class="nav-link" href="?page=listar">Listar usuarios</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="?page=login">login</a>
+          <li class="nav-item">
+          <a class="nav-link" href="?page=area">Area Restrita</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -49,6 +54,12 @@
                 case "editar":
                   include("editar-usuario.php");
                   break;
+                  case "login":
+                    include("login.php");
+                    break;
+                    case "area":
+                      include("area-restrita.php");
+                      break;
                   default:
                   print"<h1>Bem Vindos!</h1>";
 

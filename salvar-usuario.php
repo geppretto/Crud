@@ -5,10 +5,11 @@
         case 'cadastrar':
             $nome = $_POST["nome"];
             $email = $_POST["email"];
-            $senha = ($_POST["senha"]);
+            $contato = $_POST["contato"];
+            $senha =password_hash($senha,PASSWORD_DEFAULT); $_POST["senha"];
             $data_nasc = $_POST["data_nasc"];
 
-            $sql = "INSERT INTO usuarios2 (nome,email,senha,data_nasc) VALUES ('{$nome}', '{$email}','{$senha}','{$data_nasc}')";
+            $sql = "INSERT INTO usuarios3 (nome,email,contato,senha,data_nasc) VALUES ('{$nome}', '{$email}','{$contato}','{$senha}','{$data_nasc}')";
 
             $res = $conn->query($sql);
             if($res==true){
@@ -21,17 +22,24 @@
             break;
         
             case 'editar':
-
+                
+                
                 $nome = $_POST["nome"];
                 $email = $_POST["email"];
-                $senha = ($_POST["senha"]);
+                $contato = $_POST["contato"];
+                $senha =password_hash($senha,PASSWORD_DEFAULT); $_POST["senha"];
                 $data_nasc = $_POST["data_nasc"];
-                if($senha !=""){
+                
+                
+                
 
-                $sql = "UPDATE usuarios2 SET
+                if($senha !=""){
+                    
+                $sql = "UPDATE usuarios3 SET
 
                 nome='{$nome}',
                 email='{$email}',
+                contato='{$contato}',
                 senha='{$senha}',
                 data_nasc='{$data_nasc}'
                 WHERE
@@ -39,10 +47,11 @@
                
                 $res = $conn->query($sql);
             }else{
-                $sql = "UPDATE usuarios2 SET
+                $sql = "UPDATE usuarios3 SET
 
                 nome='{$nome}',
                 email='{$email}',
+                contato='{$contato}',
                 data_nasc='{$data_nasc}'
                 WHERE
                     id=".$_REQUEST["id"];
@@ -59,7 +68,7 @@
             break;
 
             case 'excluir':
-            $sql = "DELETE FROM usuarios2 WHERE id=".$_REQUEST["id"];
+            $sql = "DELETE FROM usuarios3 WHERE id=".$_REQUEST["id"];
 
             $res = $conn->query($sql);
             if($res==true){

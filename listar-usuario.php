@@ -1,6 +1,6 @@
 <h1>listar usuario</h1>
 <?php
-    $sql = "SELECT * FROM usuarios2";
+    $sql = "SELECT * FROM usuarios3";
     
     $res = $conn->query($sql);
 
@@ -12,6 +12,7 @@
         print "<th>#</th>";
         print "<th>Nome</th>";
         print "<th>E-mail</td>";
+        print "<th>Contato</td>";
         print "<th>Data de Nascimento</th>";
         print "<th>senha</th>";
         print "<th>ações</th>";
@@ -21,6 +22,7 @@
            print "<td>".$row->id."</td>";
            print "<td>".$row->nome."</td>";
            print "<td>".$row->email."</td>";
+           print "<td>".$row->contato."</td>";
            print "<td>".$row->data_nasc."</td>";
            print "<td>".$row->senha."</td>";
 

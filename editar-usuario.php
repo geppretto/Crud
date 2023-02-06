@@ -2,7 +2,7 @@
 <?php
 
 
-    $sql = "SELECT * FROM usuarios2 WHERE id=".$_REQUEST["id"];
+    $sql = "SELECT * FROM usuarios3 WHERE id=".$_REQUEST["id"];
     $res = $conn->query($sql);
     $row = $res->fetch_object();
  
@@ -17,6 +17,10 @@
     <div class="mb-3">
         <label>E-mail</label>
         <input type="email" name="email" value="<?php print $row->email; ?>"class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Contato</label>
+        <input type="tel" name="contato" value="<?php print $row->contato; ?>"class="form-control">
     </div>
     <div class="mb-3">
         <label>Senha</label>
